@@ -47,6 +47,9 @@ module.exports = {
   },
   module: {
     loaders: [
+      { 
+        test: /\.jsx?$/, loader: process.env.NODE_ENV !== 'production' ? 'react-hot!babel!eslint-loader' : 'babel', exclude: [/node_modules/, /public/] 
+      },
       {
         test: /\.css$/,
         loader: ExtractTextPlugin.extract('style-loader', 'css-loader!postcss-loader')
