@@ -1,47 +1,25 @@
 import React, { Component, PropTypes } from 'react';
-import Grid  from 'react-bootstrap/lib/Grid';
-import Nav from 'react-bootstrap/lib/Nav';
-import Navbar from 'react-bootstrap/lib/Navbar';
-import NavItem  from 'react-bootstrap/lib/NavItem';
-import { Link } from 'react-router';
-import LinkContainer from 'react-router-bootstrap/lib/LinkContainer';
+import {IndexLink, Link } from 'react-router';
 
 import './bootstrap.css';
-
-const propTypes = {
-  children: PropTypes.node  
- };
+import './App.css';
 
 class App extends Component {
   render() {
     return (
-      <div>
-        <Navbar>
-          <Navbar.Header>
-            <Navbar.Brand>
-              <Link to='/'>Hello Guys @!</Link>
-            </Navbar.Brand>
-            <Navbar.Toggle />
-          </Navbar.Header>
-          <Navbar.Collapse>
-            <Nav navbar>
-              <LinkContainer to='/time'>
-                 <NavItem>Время</NavItem>
-              </LinkContainer>
-              <LinkContainer to='/counters'>
-                <NavItem>Счетчики</NavItem>
-              </LinkContainer>
-            </Nav>
-          </Navbar.Collapse>
-        </Navbar>
-        <Grid>
-        {this.props.children}
-        </Grid>
-      </div>
+        <div>
+            <h1>SPA center "Relax" <span>&reg;</span></h1>
+            <ul className="header">
+                <li><IndexLink to="/" activeClassName="active">HOME</IndexLink></li>
+                <li><Link to="/stuff" activeClassName="active">STUFF</Link></li>
+                <li><Link to="/contact" activeClassName="active">CONTACT</Link></li>
+            </ul>
+            <div className="content">
+                {this.props.children}
+            </div>
+        </div>
     );
   }
 }
-
-App.propTypes = propTypes;
 
 export default App;
