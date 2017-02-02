@@ -1,3 +1,3 @@
-import TimePage from './Contact';
+import Contact from './Contact';
 
-export default TimePage;
+export default Contact;

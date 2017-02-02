@@ -1,7 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import {IndexLink, Link } from 'react-router';
 
-import './bootstrap.css';
 import './App.css';
 
 class App extends Component {
